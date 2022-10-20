@@ -1,4 +1,5 @@
 # yapılacaklar listesi
 
 reactda basit bir yapılacaklar listesi oluşturma. listeye veri ekleyip silebiliyoruz. yapılan maddenin üstünü karalayabiliyoruz.
-![Ekran Görüntüsü (88)](https://user-images.githubusercontent.com/56928038/196994343-44ebc0da-362f-4d3b-907e-94bb5979e69c.png)
+
+![Ekran Görüntüsü (89)](https://user-images.githubusercontent.com/56928038/196994934-22e9926e-d136-470f-8bea-1fefa4703f43.png)
