@@ -1,23 +1,47 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import TodoField from './components/TodoField';
+import Todos from "./components/Todos";
 
 function App() {
+  const [ todos, setTodos] = useState("");
+  //   [
+  //   {
+  //     id: 1,
+  //     name: "alışveriş",
+  //     status: false,
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "proje",
+  //     status: true,
+  //   },
+  // ]
+
+
+  const addTodo = (todo) =>{
+    if(todo.name){
+      setTodos([...todos,todo])
+      
+    }
+
+  };
+
+  const deleteTodo =(id) =>{
+    let newTodos = todos.filter((todo)=>todo.id !== id);
+    setTodos(newTodos) ;
+  }
+
+  const doneTodo =(id) =>{
+     let currentTodo = todos.find((todo)=> todo.id===id);
+     currentTodo.status=true;
+     setTodos([...todos]);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>YAPILACAKLAR</h1>
+      <TodoField addTodo={addTodo}></TodoField>
+      <Todos doneTodo={doneTodo} deleteTodo={deleteTodo} todos={todos}></Todos>
     </div>
   );
 }
